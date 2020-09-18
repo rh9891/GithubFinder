@@ -1,13 +1,19 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Search extends Component {
   state = {
     text: "",
   };
 
+  static propTypes = {
+      searchUsers: PropTypes.func.isRequired
+  }; 
+
   onSubmit = event => {
       event.preventDefault();
-      console.log(this.state.text);
+      this.props.searchUsers(this.state.text);
+      this.setState({ text: "" });
   };
 
   onChange = event => this.setState({ [event.target.name]: event.target.value });
