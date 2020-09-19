@@ -4,6 +4,8 @@ import Navbar from "./components/layout/Navbar";
 import Users from "./components/users/Users";
 import Search from "./components/users/Search";
 import Alert from "./components/layout/Alert";
+import About from "./components/pages/About";
+
 import axios from "axios";
 import "./App.css";
 
@@ -49,6 +51,7 @@ class App extends Component {
                   <Users loading={loading} users={users} />
                 </Fragment>
               )} />
+              <Route exact path="/about" component={About} />
             </Switch>
             
         </div>
