@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 class Search extends Component {
   state = {
-    text: "",
+    text: ""
   };
 
   static propTypes = {
@@ -43,7 +43,8 @@ class Search extends Component {
             className="btn btn-dark btn-block"
           />
         </form>
-        {showClear && <button className="btn btn-light btn-block" onClick={clearUsers}>Clear</button>}
+        {showClear && (<button className="btn btn-light btn-block" onClick={clearUsers}>Clear</button>
+        )}
       </div>
     );
   }

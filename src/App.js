@@ -30,10 +30,10 @@ class App extends Component {
   // Gets information for single Github user.
   getUser = async username => {
     this.setState({ loading: true });
- 
+    console.log(username);
     const response = await axios.get(`https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
     
-    this.setState({ users: response.data, loading: false });
+    this.setState({ user: response.data, loading: false });
   }
 
   // Clears users from state.
@@ -58,18 +58,17 @@ class App extends Component {
             <Switch>
               <Route exact path="/" render={props => (
                 <Fragment>
-                  <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers} showClear={users.length > 0 ? true: false } setAlert={this.setAlert} /> 
+                  <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers} showClear={users.length > 0} setAlert={this.setAlert} /> 
                   <Users loading={loading} users={users} />
                 </Fragment>
               )} />
               <Route exact path="/about" component={About} />
-              <Route exact path="/user/:login" render={props => (
-                <User { ...props } getUser={this.getUser} user={user} loading={loading} />
+              <Route exact path={`/user/:login`} render={props => (
+                <User {...props} getUser={this.getUser} user={user} loading={loading} />
               )} />
             </Switch>
-            
         </div>
-      </div>
+        </div>
       </Router>
     );
   }
