@@ -35,7 +35,16 @@ const GithubState = props => {
     };
 
     // Gets information for single Github user.
-
+    const getUser = async username => {
+        setLoading();
+        console.log(username);
+        const response = await axios.get(`https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+        
+        dispatch({
+            type: GET_USER,
+            payload: response.data
+        });
+    };
     // Get user's repositories.
 
     // Clears users from state.
@@ -51,7 +60,8 @@ const GithubState = props => {
             repos: state.repos,
             loading: state.loading,
             searchUsers,
-            clearUsers
+            clearUsers,
+            getUser
         }}
     >
         {props.children}
