@@ -56,9 +56,9 @@ THEN I will have cleared the results of the current search.
 
 The following animation demonstrates the complete application functionality:
 
-![Github Finder Functionality Preview]()
+![Github Finder Functionality Preview](https://github.com/rh9891/GithubFinder/blob/master/assets/videos/GithubFinderApplicationFunctionality.gif)
 
-To download the above video file of the application functionality, you may do so [here]().
+To download the above video file of the application functionality, you may do so [here](https://github.com/rh9891/GithubFinder/blob/master/assets/videos/GithubFinderApplicationFunctionality.mp4).
 
 ## Links
 
