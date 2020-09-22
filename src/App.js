@@ -11,7 +11,6 @@ import GithubState from "./context/github/GithubState";
 import "./App.css";
 
 const App = () => {
-  const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -37,12 +36,6 @@ const App = () => {
     setLoading(false);
   }
 
-  // Clears users from state.
-  const clearUsers = () => {
-    setUsers([]);
-    setLoading(false);
-  }
-
   // Sets alert if no search term is provided.
   const showAlert = (msg, type) => {
     setAlert({ msg, type });
@@ -61,8 +54,8 @@ const App = () => {
             <Switch>
               <Route exact path="/" render={props => (
                 <Fragment>
-                  <Search clearUsers={clearUsers} showClear={users.length > 0} setAlert={showAlert} /> 
-                  <Users loading={loading} users={users} />
+                  <Search setAlert={showAlert} /> 
+                  <Users />
                 </Fragment>
               )} />
               <Route exact path="/about" component={About} />
