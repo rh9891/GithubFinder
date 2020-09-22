@@ -17,7 +17,7 @@
 
 ## Description
 
-Github Finder is a responsive, dynamic application that searches for Github users through an input form. Upon a user's search, the application generates a list of all the Github users matching the inputted term onto a grid format. Clicking on the `More` button allows the user access to additional Github information for that searched user, such as access to their bio, website, location, five most recent repositories, their Github profile page, and other pertinent information.
+Github Finder is a responsive, dynamic application that searches for Github users through an input form. Upon a user's search, the application generates a list of all the Github users matching the inputted term onto a grid format. Clicking on the `More` button allows the user access to additional Github information for that searched user, such as access to their bio, website, location, five most recent repositories, their Github profile page, among other things.
 
 Github Finder is a React application that utilizes the Context API along with the useContext and useReducer hooks for state management. The application also utilizes the Github API to search for Github users by their username and name to display the user's profile and other relevant information.
 
@@ -52,7 +52,7 @@ THEN I will have cleared the results of the current search.
 
 ## Preview of Github Finder
 
-![Github Finder User Page]()
+![Github Finder User Page](assets/images/GithubFinderUserPage.png)
 
 The following animation demonstrates the complete application functionality:
 
