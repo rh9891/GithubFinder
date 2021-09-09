@@ -57,14 +57,14 @@ const User = ({ match: { params } }) => {
             alt=""
             style={{ width: "150px" }}
           />
-          <h1>{name}</h1>
+          <h1 id="name">{name}</h1>
           <p>Location: {location}</p>
         </div>
         <div>
           {bio && (
             <Fragment>
               {" "}
-              <h3>Bio</h3> <p>{bio}</p>
+              <p>{bio}</p>
             </Fragment>
           )}
           <a href={html_url} className="btn btn-dark my-1">

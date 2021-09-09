@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* Global Styles */
 :root {
-  --primary-color: #a9203e;
-  --dark-color: #333333;
-  --light-color: #f4f4f4;
+  --primary-color: #849a4a;
+  --dark-color: #3e445b;
+  --light-color: #ebebeb;
   --danger-color: #a9203e;
-  --success-color: #56dfc1;
+  --success-color: #a4b47c;
 }
 
 * {
@@ -16,11 +16,11 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
-  color: #333;
+  background-color: #ffffff;
+  color: #333333;
 }
 
 a {
@@ -29,7 +29,7 @@ a {
 }
 
 a:hover {
-  color: #666;
+  color: #666666;
 }
 
 ul {
@@ -38,6 +38,10 @@ ul {
 
 img {
   width: 100%;
+}
+
+#name {
+  color: #5c6c54;
 }
 
 /* Utilities */
@@ -112,7 +116,7 @@ img {
 /* Cards */
 .card {
   padding: 1rem;
-  border: #ccc 1px dotted;
+  border: #cccccc 1px dotted;
   margin: 0.7rem 0;
 }
 
@@ -199,7 +203,7 @@ img {
 .btn {
   display: inline-block;
   background: var(--light-color);
-  color: #333;
+  color: #333333;
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
@@ -233,7 +237,7 @@ img {
   text-align: center;
   margin: 0.3rem;
   background: var(--light-color);
-  color: #333;
+  color: #333333;
   border-radius: 5px;
 }
 
@@ -242,7 +246,7 @@ img {
   margin: 1rem 0;
   opacity: 0.9;
   background: var(--light-color);
-  color: #333;
+  color: #333333;
 }
 
 .btn-primary,
@@ -250,7 +254,7 @@ img {
 .badge-primary,
 .alert-primary {
   background: var(--primary-color);
-  color: #fff;
+  color: #ffffff;
 }
 
 .btn-light,
@@ -258,7 +262,7 @@ img {
 .badge-light,
 .alert-light {
   background: var(--light-color);
-  color: #333;
+  color: #333333;
 }
 
 .btn-dark,
@@ -266,7 +270,7 @@ img {
 .badge-dark,
 .alert-dark {
   background: var(--dark-color);
-  color: #fff;
+  color: #ffffff;
 }
 
 .btn-danger,
@@ -274,7 +278,7 @@ img {
 .badge-danger,
 .alert-danger {
   background: var(--danger-color);
-  color: #fff;
+  color: #ffffff;
 }
 
 .btn-success,
@@ -282,16 +286,16 @@ img {
 .badge-success,
 .alert-success {
   background: var(--success-color);
-  color: #fff;
+  color: #ffffff;
 }
 
 .btn-white,
 .bg-white,
 .badge-white,
 .alert-white {
-  background: #fff;
-  color: #333;
-  border: #ccc solid 1px;
+  background: #ffffff;
+  color: #333333;
+  border: #cccccc solid 1px;
 }
 
 .btn:hover {
@@ -300,7 +304,7 @@ img {
 
 .bg-light,
 .badge-light {
-  border: #ccc solid 1px;
+  border: #cccccc solid 1px;
 }
 
 .round-img {
@@ -315,23 +319,23 @@ input {
 .form-text {
   display: block;
   margin-top: 0.3rem;
-  color: #888;
+  color: #888888;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='date'],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
 select,
 textarea {
   display: block;
   width: 100%;
   padding: 0.4rem;
   font-size: 1.2rem;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
 }
 
-input[type='submit'],
+input[type="submit"],
 button {
   font: inherit;
 }
@@ -363,7 +367,7 @@ table th {
 }
 
 .navbar a {
-  color: #fff;
+  color: #ffffff;
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
