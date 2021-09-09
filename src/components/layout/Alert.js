@@ -5,7 +5,7 @@ const Alert = () => {
   const { alert } = useContext(AlertContext);
 
   return (
-    alert !== null && (
+    alert && (
       <div className={`alert alert-${alert.type}`}>
         <i className="fas fa-info-circle" /> {alert.msg}
       </div>

@@ -2,44 +2,56 @@ import React, { useState, useContext } from "react";
 import GithubContext from "../../context/github/githubContext";
 import AlertContext from "../../context/alert/alertContext";
 
-const Search = () => {
-  const githubContext = useContext(GithubContext);
-  const alertContext = useContext(AlertContext);
+import { searchUsers } from "../../context/github/actions";
+import { SEARCH_USERS, SET_LOADING, CLEAR_USERS } from "../../context/types";
 
+const Search = () => {
+  const { dispatch, users } = useContext(GithubContext);
+  const { setAlert } = useContext(AlertContext);
 
   const [text, setText] = useState("");
 
-  const onSubmit = event => {
-      event.preventDefault();
-      if (text === "") {
-          alertContext.setAlert("Please enter a search term.", "light");
-      } else {
-        githubContext.searchUsers(text);
+  const onSubmit = (event) => {
+    event.preventDefault();
+    if (text === "") {
+      setAlert("Please enter a search term.", "light");
+    } else {
+      dispatch({ type: SET_LOADING });
+      searchUsers(text).then((users) => {
+        dispatch({ type: SEARCH_USERS, payload: users });
         setText("");
-      }
+      });
+    }
   };
 
-  const onChange = event => setText(event.target.value);
+  const onChange = (event) => setText(event.target.value);
 
-    return (
-      <div>
-        <form onSubmit={onSubmit} className="form"> 
-          <input 
-            type="text" 
-            name="text" 
-            placeholder="Search Users"
-            value={text}
-            onChange={onChange} />
-          <input
-            type="submit"
-            value="Search"
-            className="btn btn-dark btn-block"
-          />
-        </form>
-        {githubContext.users.length > 0 && (<button className="btn btn-light btn-block" onClick={githubContext.clearUsers}>Clear</button>
-        )}
-      </div>
-    );
+  return (
+    <div>
+      <form onSubmit={onSubmit} className="form">
+        <input
+          type="text"
+          name="text"
+          placeholder="Search Users"
+          value={text}
+          onChange={onChange}
+        />
+        <input
+          type="submit"
+          value="Search"
+          className="btn btn-dark btn-block"
+        />
+      </form>
+      {users.length > 0 && (
+        <button
+          className="btn btn-light btn-block"
+          onClick={() => dispatch({ type: CLEAR_USERS })}
+        >
+          Clear
+        </button>
+      )}
+    </div>
+  );
 };
 
 export default Search;
