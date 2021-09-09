@@ -63,7 +63,7 @@ THEN I will have cleared the results of the current search.
 
 - [Deployed Application](https://find-users-on-github.netlify.app/)
 
-- [Github Repository](https://github.com/rh9891/GithubFinder)
+- [Github Repository](https://github.com/rh9891/gitSearch)
 
 ## Installation
 
